@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rutas
-const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
+const personal_medicoRouter = require('./routes/Personal_Medico');
+app.use('/api/personal_medico', personal_medicoRouter);
 
 // Iniciar el servidor
 app.listen(PORT, () => {
