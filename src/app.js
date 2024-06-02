@@ -16,9 +16,13 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Rutas
+// Rutas Personal Médico
 const personal_medicoRouter = require('./routes/Personal_Medico');
 app.use('/api/personal_medico', personal_medicoRouter);
+
+// Rutas Paciente
+const pacientesRouter = require('./routes/Pacientes');
+app.use('/api/paciente', pacientesRouter);
 
 // Iniciar el servidor
 app.listen(PORT, () => {
