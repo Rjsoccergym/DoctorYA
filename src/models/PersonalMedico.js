@@ -13,4 +13,4 @@ const PersonalMedicoSchema = new mongoose.Schema({
     contactoEmergencia: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Personal_Medico', PersonalMedicoSchema);
+module.exports = mongoose.model('PersonalMedico', PersonalMedicoSchema);

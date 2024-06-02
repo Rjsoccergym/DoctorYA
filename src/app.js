@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rutas Personal Médico
-const personal_medicoRouter = require('./routes/Personal_Medico');
-app.use('/api/personal_medico', personal_medicoRouter);
+const personalMedicoRouter = require('./routes/PersonalMedico');
+app.use('/api/personalMedico', personalMedicoRouter);
 
 // Rutas Paciente
 const pacientesRouter = require('./routes/Pacientes');

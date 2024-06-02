@@ -64,3 +64,27 @@ exports.deletePaciente = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// Endpoint para el login de Paciente
+exports.loginPaciente = async (req, res) => {
+  const { email, numeroDocumento } = req.body;
+
+  try {
+    // Buscar al paciente por email y número de documento
+    const paciente = await Paciente.findOne({ email, numeroDocumento });
+
+    if (!paciente) {
+      return res.status(404).json({ error: 'CREDENCIALES INVÁLIDAS' });
+    }
+
+    // Si se encuentra, enviar mensaje de inicio exitoso
+    const fechaHoraIngreso = new Date().toLocaleString();
+    res.status(200).json({
+      message: 'Inicio de sesión Exitoso',
+      welcomeMessage: `Bienvenid@ ${paciente.nombre}`,
+      fechaHoraIngreso
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
