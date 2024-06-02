@@ -3,7 +3,7 @@ const router = express.Router();
 const pacientesController = require('../controllers/PacientesController');
 
 // Login de Paciente
-router.post('/login/paciente', pacientesController.loginPaciente);
+router.post('/login', pacientesController.loginPaciente);
 
 // Crear un nuevo paciente
 router.post('/', pacientesController.createPaciente);

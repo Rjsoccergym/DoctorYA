@@ -3,7 +3,7 @@ const router = express.Router();
 const personalMedicoController = require('../controllers/PersonalMedicoController');
 
 // Login del Personal Médico
-router.post('/login/personalMedico', personalMedicoController.loginPersonalMedico);
+router.post('/login', personalMedicoController.loginPersonalMedico);
 
 // Crear un nuevo registro del personal médico
 router.post('/', personalMedicoController.createPersonalMedico);
