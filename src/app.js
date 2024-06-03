@@ -24,6 +24,14 @@ app.use('/api/personalMedico', personalMedicoRouter);
 const pacientesRouter = require('./routes/Pacientes');
 app.use('/api/paciente', pacientesRouter);
 
+// Rutas Historial Médico
+const historialMedicoRouter = require('./routes/HistorialMedico');
+app.use('/api/historialMedico', historialMedicoRouter);
+
+// Rutas Citas
+const citaRouter = require('./routes/Cita');
+app.use('/api/cita', citaRouter);
+
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://${HOST}:${PORT}`);

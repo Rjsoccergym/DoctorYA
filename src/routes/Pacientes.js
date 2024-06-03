@@ -11,6 +11,9 @@ router.post('/', pacientesController.createPaciente);
 // Obtener todos los pacientes
 router.get('/', pacientesController.getPacientes);
 
+// Obtener pacientes por nombre o número de documento
+router.get('/search', pacientesController.searchPacientes);
+
 // Obtener un paciente por número de documento
 router.get('/:numeroDocumento', pacientesController.getPacienteById);
 

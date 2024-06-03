@@ -88,3 +88,18 @@ exports.loginPaciente = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// Buscar pacientes por nombre o número de identificación
+exports.searchPacientes = async (req, res) => {
+  const { nombre } = req.query;
+
+  try {
+    const query = {};
+    if (nombre) query.nombre = new RegExp(nombre, 'i'); // búsqueda parcial e insensible a mayúsculas
+
+    const pacientes = await Paciente.find(query);
+    res.status(200).json(pacientes);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
