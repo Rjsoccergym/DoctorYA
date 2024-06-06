@@ -14,6 +14,9 @@ router.get('/:numeroDocumento', citaController.getCitas);
 // Obtener cita por ID de un usuario
 router.get('/:numeroDocumento/:idCita', citaController.getCitaByID);
 
+// Obtener detalles de una cita por ID en el email
+router.get('/detalles/:numeroDocumento/:idCita', citaController.getInfoCitaByID);
+
 // Agendar una nueva cita médica
 router.post('/agendar/:numeroDocumento', citaController.addCita);
 
